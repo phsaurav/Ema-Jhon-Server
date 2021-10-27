@@ -21,6 +21,10 @@ async function run() {
 		const productCollection = database.collection('products');
 		const orderCollection = database.collection('order');
 
+		app.get('/', (req, res) => {
+			res.send('Running Genius Server');
+		});
+
 		//GET Products API
 		app.get('/products', async (req, res) => {
 			const cursor = productCollection.find({});
